@@ -126,7 +126,7 @@ TO FIX :
         mpz_class r = Pair.second;
         
             if( r == -1 ){
-                cout<<"Error in core , could not find r "<<endl;
+                cout<<" Error in core , could not find r "<<endl;
                 return -1;
             } 
         
@@ -146,42 +146,43 @@ TO FIX :
 
         logResults(p.get_mpz_t(),q.get_mpz_t(),g.get_mpz_t(),r.get_mpz_t(),N.get_mpz_t());
 
-        std::cout<<"\n verify the results ?  [Y/n]"<<std::endl;
+
+        std::cout<<" verify the results ?  [Y/n] \n"<<std::endl;
         char ans;
         std:cin>>ans;
         
         if(ans == 'Y'){
-            switch ( confirmResults(p.get_mpz_t(),q.get_mpz_t(),N.get_mpz_t())){
+            switch ( confirmResults(p,q,N) ){
             case 0:
                 break;
             
             case 1:
-                std::cout<<"\n \n error code 1 ";
+                std::cout<<"\n error code 1 \n";
                 break;
 
             case 2:
-                std::cout<<"\n \n error code 2 ";
+                std::cout<<"\n error code 2 \n";
                 break;
             case 3:
-                std::cout<<"\n \n error code 3 ";
+                std::cout<<"\n error code 3 \n";
                 break;
 
             default:
-                std::cout<<"\n \n undefined behaviour";
+                std::cout<<"\n undefined behaviour \n ";
                 break;
             };
         }
-        return -1;
+        return 0;
     }
 
     
 
 int main (){
     mpz_class semiPrime;
-    cout<<"Enter a semi prime number "<<endl;
+    cout<<" Enter a semi prime number"<<endl;
     cin >> semiPrime;
     if(core(semiPrime) == -1){
-        cout<<"Error in core , terminating program ";
+        cout<<" Error in core , terminating program \n";
     }
     return 0;
 }
