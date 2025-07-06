@@ -36,10 +36,7 @@ using Euclid's algorithm to find the GCD of a & N and b & N .
 
 ## the sequence of function goes in such a way that , if one function calls another , the called function must be declared before (above) the caller function
 
-    1. genRandom (calls none , uses <random>)
-    2. findR (calls genRandome() , uses <math.h>)
-    3. gcd (calls none)
-    4. isCorrect (calls none)
-    5. isPrime (calls none)
-    6. core (calls findR() , isCorrect() , isPrime() , gcd() , uses <math.h>)
-    7. main (calls core() , very sensative to core's return value)
+    1. genRand
+    2. findR 
+    3. core 
+    4. main (calls core() , very sensative to core's return value)
