@@ -92,3 +92,18 @@ void mpz_pow( mpz_t result , const mpz_t base , const mpz_t exponent ){
         gmp_printf(" value of r : %Zd\n", r);
         gmp_printf(" value of N : %Zd\n", N);
     }
+
+    bool isCorrect (mpz_class p , mpz_class q , mpz_class N){
+        return p*q == N;
+    }
+
+    bool isPrime(mpz_class n) {
+        if(n <= 1) return false;
+        if(n == 2 || n == 3) return true;
+        if( (n%2) == 0 || (n%3) == 0) return false;
+
+        for(int i = 5; i*i <=n; i = i + 6){
+            if( n % i == 0 || n % (i+2) == 0) return false;
+        }
+        return true;
+    }

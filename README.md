@@ -18,24 +18,24 @@ Given a semi-prime `N`(product of two primes p and q ), the program:
 
 ---
 
-## Limitations
-
-- pow() returns a double , hence there is a precision loss while working with bigger numbers
-- the mathematical operations used here are exponential and C++ can't handle these safely for large numbers 
-- runs into integer overflow due to C++'s limitations , works upto 91 .  
+## Limitations  
 - Meant for learning, not production-level factorization .
-- No BigInt support (for now) .
 
 ---
 
 ## TODO 
-- [ ] Integrate GNU Multiple Precision Arithmetic Library (GMP)
-- [ ] Improve randomization logic for generating `g`
-- [ ] Optimize for speed and memory usage
+- [x] Integrate GNU Multiple Precision Arithmetic Library (GMP)
+- [x] Improve randomization logic for generating `g`
+- [ ] Optimize for speed and memory usage## 🧠 Algorithm
+- [ ] g must not share a factor with N , add a safety check for this 
 
+
+## 📦 Dependencies
+
+This program uses the [GMP Library](https://gmplib.org/) for handling large integers.
 
 ## 🛠️ Usage
 
 ```bash
-g++ main.cpp -o cracker
-./cracker
+g++ main.cpp -o main.exe -lgmp -lgmpxx
+./main.exe
